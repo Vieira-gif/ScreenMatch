@@ -1,3 +1,5 @@
+package br.com.alura.screenmatch.modelos;
+
 public class Filme {
 
     // DECLARER
@@ -7,49 +9,49 @@ public class Filme {
     private boolean incluidoNoPlano;
 
     // METHOD
-    void somaAvaliacoes(int avalia) {
+    public void somaAvaliacoes(int avalia) {
         this.somaDeNotas += avalia;
     }
 
-    int CalculaMedia (){
+    public int CalculaMedia (){
        return (this.somaDeNotas / this.totalDeAvaliacoes);
     }
 
     //GETTERS
-    int getanoDeLancamento() {
+    public int getanoDeLancamento() {
         return this.anoDeLancamento;
     }
 
-    int getTotalDeAvaliacoes() {
+    public int getTotalDeAvaliacoes() {
         return this.totalDeAvaliacoes;
     }
 
-    String getNome() {
+    public String getNome() {
         return this.nome;
     }
 
-    double getDuracao() {
+    public double getDuracao() {
         return this.duracao;
     }
 
-    boolean getincluidoNoPlano(){
+    public boolean getincluidoNoPlano(){
         return this.incluidoNoPlano;
     }
 
     // SETTERS
-    void setNome (String nome){
+    public void setNome (String nome){
         this.nome = nome;
     }
-    void setAnoDeLancamento (int anoDeLancamento){
+    public void setAnoDeLancamento (int anoDeLancamento){
         this.anoDeLancamento = anoDeLancamento;
     }
-    void setincluidoNoPlano (boolean incluidoNoPlano){
+    public void setincluidoNoPlano (boolean incluidoNoPlano){
         this.incluidoNoPlano = incluidoNoPlano;
     }
-    void setDuracao (double duracao){
+    public void setDuracao (double duracao){
         this.duracao = duracao;
     }
-    void setAvalia(int avalia){
+    public void setAvalia(int avalia){
         somaAvaliacoes(avalia);
         this.totalDeAvaliacoes++;
     }
