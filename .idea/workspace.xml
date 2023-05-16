@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3b878be7-1e82-4faa-9ce6-9b62a05600dd" name="Changes" comment="Starting Project" />
+    <list default="true" id="3b878be7-1e82-4faa-9ce6-9b62a05600dd" name="Changes" comment="Starting Project">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,6 +34,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/João/Documents/WorkSpace/Alura/screenmatch",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -49,7 +52,8 @@
       <option name="presentableId" value="Default" />
       <updated>1683930155590</updated>
       <workItem from="1683930156657" duration="5504000" />
-      <workItem from="1684189277013" duration="3015000" />
+      <workItem from="1684189277013" duration="3577000" />
+      <workItem from="1684197864876" duration="85000" />
     </task>
     <task id="LOCAL-00001" summary="Starting Project">
       <created>1684195503419</created>
