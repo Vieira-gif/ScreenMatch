@@ -4,8 +4,7 @@ public class Titulo {
 
     // DECLARER
     private String nome;
-    private double duracao;
-    private int anoDeLancamento, totalDeAvaliacoes, somaDeNotas;
+    private int anoDeLancamento, totalDeAvaliacoes, somaDeNotas, duracao;
     private boolean incluidoNoPlano;
 
     // METHOD
@@ -14,7 +13,11 @@ public class Titulo {
     }
 
     public int CalculaMedia (){
-        return (this.somaDeNotas / this.totalDeAvaliacoes);
+        if (totalDeAvaliacoes <= 0){
+            return 0;
+        } else {
+            return (this.somaDeNotas / this.totalDeAvaliacoes);
+        }
     }
 
     //GETTERS
@@ -30,7 +33,7 @@ public class Titulo {
         return this.nome;
     }
 
-    public double getDuracao() {
+    public int getDuracaoEmMinutos() {
         return this.duracao;
     }
 
@@ -42,33 +45,57 @@ public class Titulo {
 
     // SETTERS
     public void setNome (String nome){
-        this.nome = nome;
+        if (!nome.isBlank()){
+            this.nome = nome;
+        } else {
+            this.nome = null;
+        }
+
     }
     public void setAnoDeLancamento (int anoDeLancamento){
-        this.anoDeLancamento = anoDeLancamento;
+        if (!(anoDeLancamento < 0)){
+            this.anoDeLancamento = anoDeLancamento;
+        } else {
+            this.anoDeLancamento = 0;
+        }
+
     }
     public void setincluidoNoPlano (boolean incluidoNoPlano){
         this.incluidoNoPlano = incluidoNoPlano;
+
     }
-    public void setDuracao (double duracao){
-        this.duracao = duracao;
+    public void setDuracao (int duracao){
+        if (!(duracao < 0)){
+            this.duracao = duracao;
+        } else {
+            this.duracao = 0;
+        }
+
     }
     public void setAvalia(int avalia){
-        somaAvaliacoes(avalia);
-        this.totalDeAvaliacoes++;
+        if (!(avalia < 0)) {
+            somaAvaliacoes(avalia);
+            this.totalDeAvaliacoes++;
+        } else {
+            somaAvaliacoes(0);
+            this.totalDeAvaliacoes = 0;
+        }
+
     }
 
     // toString
-    public String toString () {
-        return ("""
+    public void exibeFichaTecnica() {
+        System.out.printf("""
+                ------- %S --------
                 Nome: %S
-                Duração: %.1f
+                Duração: %d Horas
                 Ano de Lançamento: %d
-                Soma das Avaliação: %d
                 Total de Avaliações: %d
                 Media das Avaliação: %d
                 Incluido no Plano: %b
-                """).formatted(this.nome, this.duracao, this.anoDeLancamento, this.somaDeNotas, this.totalDeAvaliacoes, this.CalculaMedia(),this.incluidoNoPlano);
+                ------------------
+                
+                """, this.getNome(), this.getNome(), this.getDuracaoEmMinutos(), this.getanoDeLancamento(), this.getTotalDeAvaliacoes(), this.CalculaMedia(),this.getincluidoNoPlano());
     }
 
 }
