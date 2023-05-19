@@ -12,7 +12,7 @@ public class Titulo {
         this.somaDeNotas += avalia;
     }
 
-    public int CalculaMedia (){
+    public int calculaMedia(){
         if (totalDeAvaliacoes <= 0){
             return 0;
         } else {
@@ -95,7 +95,7 @@ public class Titulo {
                 Incluido no Plano: %b
                 ------------------
                 
-                """, this.getNome(), this.getNome(), this.getDuracaoEmMinutos(), this.getanoDeLancamento(), this.getTotalDeAvaliacoes(), this.CalculaMedia(),this.getincluidoNoPlano());
+                """, this.getNome(), this.getNome(), this.getDuracaoEmMinutos(), this.getanoDeLancamento(), this.getTotalDeAvaliacoes(), this.calculaMedia(),this.getincluidoNoPlano());
     }
 
 }
