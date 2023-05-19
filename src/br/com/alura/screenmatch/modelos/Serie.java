@@ -64,6 +64,6 @@ public class Serie extends Titulo{
                 Incluido no Plano: %b
                 ------------------
                 
-                """, this.getNome(), this.getNome(), this.getDuracaoEmMinutos(), this.getEpisodiosPorTemporada(),this.getanoDeLancamento(), this.getTotalDeAvaliacoes(), this.CalculaMedia(),this.isAtiva());
+                """, this.getNome(), this.getNome(), this.getDuracaoEmMinutos(), this.getEpisodiosPorTemporada(),this.getanoDeLancamento(), this.getTotalDeAvaliacoes(), this.calculaMedia(),this.isAtiva());
     }
 }
