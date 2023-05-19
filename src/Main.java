@@ -1,3 +1,6 @@
+import br.com.alura.screenmatch.calculos.CalculadoraDeTempo;
+import br.com.alura.screenmatch.calculos.FiltroDeRecomendacao;
+import br.com.alura.screenmatch.modelos.Episodio;
 import br.com.alura.screenmatch.modelos.Filme;
 import br.com.alura.screenmatch.modelos.Serie;
 
@@ -8,12 +11,17 @@ public class Main {
         Filme velozesefuriosos = new Filme();
         velozesefuriosos.setNome("Velozes e Furiosos");
         velozesefuriosos.setAnoDeLancamento(1978);
-        velozesefuriosos.setDuracao(188);
+        velozesefuriosos.setDuracao(180);
         velozesefuriosos.setAvalia(10);
         velozesefuriosos.setAvalia(10);
         velozesefuriosos.setAvalia(10);
         velozesefuriosos.setincluidoNoPlano(false);
         velozesefuriosos.exibeFichaTecnica();
+
+        Filme poderosoChefao = new Filme();
+        poderosoChefao.setNome("poderosoChefao");
+        poderosoChefao.setAnoDeLancamento(1998);
+        poderosoChefao.setDuracao(165);
 
         //Using Class Serie
         Serie peacemaker = new Serie();
@@ -27,5 +35,20 @@ public class Main {
         peacemaker.setAtiva(false);
         peacemaker.exibeFichaTecnica();
 
+        CalculadoraDeTempo calculadora = new CalculadoraDeTempo();
+        calculadora.inclui(velozesefuriosos);
+        calculadora.inclui(poderosoChefao);
+        calculadora.inclui(peacemaker);
+        System.out.println(calculadora.getTempoTotal());
+
+        FiltroDeRecomendacao filtro = new FiltroDeRecomendacao();
+        filtro.filtra(poderosoChefao);
+
+        Episodio episodio = new Episodio();
+        episodio.setNumero(1);
+        episodio.setSerie(peacemaker);
+        episodio.setTotalVisualizacoes(1200);
+
+        filtro.filtra(episodio);
     }
 }
