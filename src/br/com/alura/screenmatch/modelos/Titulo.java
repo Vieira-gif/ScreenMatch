@@ -7,6 +7,12 @@ public class Titulo {
     private int anoDeLancamento, totalDeAvaliacoes, somaDeNotas, duracao;
     private boolean incluidoNoPlano;
 
+    //CONSTRUCTOR
+    public Titulo(String nome, int anoDeLancamento) {
+        this.nome = nome;
+        this.anoDeLancamento = anoDeLancamento;
+    }
+
     // METHOD
     public void somaAvaliacoes(int avalia) {
         this.somaDeNotas += avalia;
@@ -72,7 +78,7 @@ public class Titulo {
         }
 
     }
-    public void setAvalia(int avalia){
+    public void avalia(int avalia){
         if (!(avalia < 0)) {
             somaAvaliacoes(avalia);
             this.totalDeAvaliacoes++;
