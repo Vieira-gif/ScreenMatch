@@ -71,4 +71,9 @@ public class Serie extends Titulo{
                 
                 """, this.getNome(), this.getNome(), this.getDuracaoEmMinutos(), this.getEpisodiosPorTemporada(),this.getanoDeLancamento(), this.getTotalDeAvaliacoes(), this.calculaMedia(),this.isAtiva());
     }
+
+    @Override
+    public String toString() {
+        return "Série: " + this.getNome() + "(" + this.getanoDeLancamento() + ")";
+    }
 }
