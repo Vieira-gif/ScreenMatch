@@ -1,16 +1,37 @@
 package br.com.alura.screenmatch.modelos;
 
+import br.com.alura.screenmatch.exceptions.ErroDeConversaoDeAnoException;
+import com.google.gson.annotations.SerializedName;
+
 public class Titulo implements Comparable<Titulo> {
 
+
+
     // DECLARER
+    @SerializedName("Title")
     private String nome;
-    private int anoDeLancamento, totalDeAvaliacoes, somaDeNotas, duracao;
+    @SerializedName("Year")
+    private int anoDeLancamento;
+
+    private int totalDeAvaliacoes;
+    private int somaDeNotas;
+    private int duracao;
     private boolean incluidoNoPlano;
 
     //CONSTRUCTOR
     public Titulo(String nome, int anoDeLancamento) {
         this.nome = nome;
         this.anoDeLancamento = anoDeLancamento;
+    }
+
+    public Titulo(TituloOmdb meuTituloOmb){
+        this.nome = meuTituloOmb.title();
+        if (meuTituloOmb.year().length() > 4){
+            throw new ErroDeConversaoDeAnoException("Não consegui converter o ano");
+        }
+        this.anoDeLancamento = Integer.valueOf(meuTituloOmb.year());
+        this.duracao = Integer.valueOf(meuTituloOmb.runtime().substring(0, 2));
+
     }
 
     // METHOD
@@ -46,7 +67,6 @@ public class Titulo implements Comparable<Titulo> {
     public boolean getincluidoNoPlano(){
         return this.incluidoNoPlano;
     }
-
 
 
     // SETTERS
@@ -107,5 +127,12 @@ public class Titulo implements Comparable<Titulo> {
     @Override
     public int compareTo(Titulo outroTitulo) {
         return this.getNome().compareTo(outroTitulo.getNome());
+    }
+
+    @Override
+    public String toString() {
+        return ("""
+                Nome: %s | Ano de Lançamento: %d | Duração: %d
+                """).formatted(this.getNome(), this.getanoDeLancamento(), this.getDuracaoEmMinutos());
     }
 }
